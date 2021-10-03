@@ -17,8 +17,8 @@ def read_json(suffix):
     r = requests.get(endpoint, auth=auth, headers=headers)
     return r.json()
 
-def data_extraction(df_02, something: str = ''):
-    return df_02.iloc[:, lambda df: df.columns.str.contains(something, case=False)]
+def data_extraction(df, keyword: str = ''):
+    return df.iloc[:, lambda df: df.columns.str.contains(keyword, case=False)]
 
 # function for cleaning up websites
 def _clean_up_websites(df_websites):
